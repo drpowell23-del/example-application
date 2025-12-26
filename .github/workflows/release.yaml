@@ -27,6 +27,9 @@ jobs:
           context: .
           push: true
           tags: docker.io/${{ secrets.REGISTRY_USER }}/example-application:${{ env.TAG_NAME }}
+          build-args: |
+            APP_VERSION=${{ env.TAG_NAME }}
+            
       # TODO: Add Docker login step here
       # Hint: Use the docker/login-action@v3
       # Use the secrets you created: REGISTRY_USER and REGISTRY_TOKEN
