@@ -40,7 +40,8 @@ jobs:
         with:
           context: .
           push: true
-          
+          tags: docker.io/${{ secrets.REGISTRY_USER }}/example-application:${{ env.TAG_NAME }}
+
 
       - name: Set TAG_NAME again
         run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
